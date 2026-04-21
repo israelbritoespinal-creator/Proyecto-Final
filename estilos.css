@@ -1,4 +1,4 @@
-﻿:root{
+:root{
     --bg: #f5efe4;
     --surface: rgba(255,255,255,0.84);
     --surface-strong: #fffdf8;
@@ -766,12 +766,15 @@ footer{
 
 @media(max-width: 760px){
     .top-bar{
-        padding: 18px;
+        position: static;
+        padding: 16px;
+        gap: 16px;
     }
 
     .menu{
         width: 100%;
-        justify-content: flex-start;
+        justify-content: center;
+        gap: 8px;
     }
 
     .hero-texto{
@@ -781,30 +784,146 @@ footer{
     section{
         padding: 22px;
     }
+
+    .logo{
+        max-width: none;
+    }
+
+    .logo p{
+        max-width: 520px;
+    }
+
+    .hero{
+        min-height: auto;
+        margin-top: 14px;
+        padding: 20px;
+    }
+
+    .hero-actions{
+        width: 100%;
+    }
+
+    .hero-actions .boton{
+        flex: 1 1 220px;
+    }
 }
 
 @media(max-width: 560px){
+    body{
+        font-size: 15px;
+    }
+
     .menu{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 8px;
     }
 
     .menu a{
         text-align: center;
+        padding: 12px 10px;
+        font-size: 0.98rem;
+        background: rgba(255,255,255,0.08);
     }
 
     .hero{
-        padding: 18px;
+        width: min(100%, calc(100% - 20px));
+        margin: 12px auto 14px;
+        padding: 12px;
         border-radius: 24px;
     }
 
     .hero-texto h2{
-        font-size: 2rem;
+        font-size: 2.15rem;
+        line-height: 1.05;
+    }
+
+    .hero-texto{
+        width: 100%;
+        max-width: none;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .hero-texto p{
+        font-size: 0.98rem;
+    }
+
+    .hero-actions{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 20px 0 18px;
+    }
+
+    .hero-actions .boton{
+        width: 100%;
+        padding: 13px 18px;
     }
 
     .hero-stats,
     .catalogo,
     .catalogo-cuatro{
         grid-template-columns: 1fr;
+    }
+
+    .hero-stats{
+        gap: 12px;
+    }
+
+    .hero-stats div{
+        padding: 16px;
+    }
+
+    .top-bar{
+        padding: 14px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .logo-badge{
+        margin-bottom: 8px;
+    }
+
+    .logo h1{
+        font-size: 2.1rem;
+    }
+
+    .logo p{
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    section{
+        width: min(100%, calc(100% - 20px));
+        margin: 14px auto;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .section-heading{
+        margin-bottom: 18px;
+        gap: 10px;
+    }
+
+    section h2{
+        font-size: 2rem;
+    }
+
+    .producto{
+        padding: 16px;
+    }
+
+    .producto img{
+        height: 210px;
+    }
+
+    .carrito-actions button,
+    .login-actions button{
+        width: 100%;
+    }
+
+    .admin-panel{
+        width: min(100%, calc(100% - 16px));
+        margin: 12px auto;
     }
 }

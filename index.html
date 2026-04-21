@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercadito Nena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        <span class="logo-badge">Desde 2026</span>
+        <h1>Mercadito Nena</h1>
+        <p>Frescura local, sabor casero y compras faciles para toda la familia.</p>
+    </div>
+
+    <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#catalogo">Catalogo</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#soporte">Soporte</a>
+        <a href="#carrito">Carrito</a>
+        <a href="#login" id="loginNavLink">Iniciar sesion</a>
+        <a href="#adminPanel" id="adminNavLink" class="oculto">Administrador</a>
+    </nav>
+</header>
+
+<section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-texto">
+        <p class="eyebrow">Mercado online de vegetales frescos</p>
+        <h2>Compra rapido, come fresco y apoya el producto local.</h2>
+        <p>
+            En Mercadito Nena encuentras verduras seleccionadas, ofertas especiales y una experiencia de compra
+            sencilla desde cualquier dispositivo.
+        </p>
+        <div class="hero-actions">
+            <a href="#catalogo" class="boton principal">Comprar ahora</a>
+            <a href="#ofertas" class="boton secundario">Ver ofertas</a>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <strong>+20</strong>
+                <span>productos frescos</span>
+            </div>
+            <div>
+                <strong>Entrega</strong>
+                <span>rapida y segura</span>
+            </div>
+            <div>
+                <strong>RD$</strong>
+                <span>precios accesibles</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="beneficios">
+    <article>
+        <h3>Calidad garantizada</h3>
+        <p>Seleccionamos productos frescos para que recibas mejor sabor y mejor presentacion.</p>
+    </article>
+    <article>
+        <h3>Compra sencilla</h3>
+        <p>Agrega al carrito en segundos y consulta tu total de forma inmediata.</p>
+    </article>
+    <article>
+        <h3>Atencion cercana</h3>
+        <p>Respondemos dudas, pedidos y soporte con un trato rapido y confiable.</p>
+    </article>
+</section>
+
+<section id="destacados">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Selecciones del dia</p>
+            <h2>Productos destacados</h2>
+        </div>
+        <p>Una seleccion de nuestros vegetales mas buscados por precio, frescura y calidad.</p>
+    </div>
+
+    <div id="productosDestacados" class="catalogo catalogo-tres"></div>
+</section>
+
+<section id="catalogo">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Todo el mercado</p>
+            <h2>Catalogo completo</h2>
+        </div>
+        <p>Ahora con mas variedad para que el proyecto se vea completo, ordenado y funcional.</p>
+    </div>
+
+    <div id="catalogoProductos" class="catalogo catalogo-cuatro"></div>
+</section>
+
+<section id="ofertas">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Ahorra mas</p>
+            <h2>Ofertas especiales</h2>
+        </div>
+        <p>Promociones pensadas para que compres mas por menos sin perder calidad.</p>
+    </div>
+
+    <div id="ofertasProductos" class="catalogo dos-columnas"></div>
+</section>
+
+<section id="carrito" class="carrito-box">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Tu pedido</p>
+            <h2>Carrito de compras</h2>
+        </div>
+        <p>Revisa tus productos agregados antes de finalizar tu compra.</p>
+    </div>
+
+    <div class="carrito-resumen">
+        <div>
+            <span class="resumen-label">Articulos</span>
+            <strong id="cantidadProductos">0</strong>
+        </div>
+        <div>
+            <span class="resumen-label">Total acumulado</span>
+            <strong>RD$ <span id="total">0</span></strong>
+        </div>
+    </div>
+
+    <ul id="listaCarrito">
+        <li class="carrito-vacio">Tu carrito esta vacio. Agrega productos para verlos aqui.</li>
+    </ul>
+
+    <div class="carrito-actions">
+        <button type="button" onclick="abrirModalPago()">Finalizar compra</button>
+        <button class="boton-ghost" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+</section>
+
+<section id="login" class="login-box">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Acceso</p>
+            <h2>Iniciar sesion</h2>
+        </div>
+        <p>Accede a tu cuenta para consultar pedidos, guardar tus productos y continuar tu compra.</p>
+    </div>
+
+    <div id="authPanel">
+        <div class="login-formulario">
+            <input type="text" id="usuario" placeholder="Usuario">
+            <input type="password" id="clave" placeholder="Contrasena">
+            <button type="button" onclick="login()">Entrar</button>
+        </div>
+
+        <div class="login-actions">
+            <button type="button" class="boton-ghost auth-secundario" onclick="abrirModalRegistro()">Crear cuenta</button>
+        </div>
+
+        <p id="mensajeLogin" class="mensaje-login"></p>
+        <small class="login-tip">Tus datos se guardan en este navegador para fines de demostracion.</small>
+    </div>
+
+    <div id="sesionActiva" class="sesion-activa oculto">
+        <p class="saludo-sesion">Sesion iniciada como <strong id="usuarioActivo"></strong>.</p>
+        <div class="login-actions">
+            <button type="button" onclick="cerrarSesion()">Cerrar sesion</button>
+        </div>
+    </div>
+</section>
+
+<section id="adminPanel" class="admin-panel oculto">
+    <div class="admin-topbar">
+        <div>
+            <p class="eyebrow">Panel privado</p>
+            <h2>Administrador</h2>
+            <p class="admin-intro">Gestiona precios, ofertas, disponibilidad y el catalogo general desde este panel.</p>
+        </div>
+        <div class="login-actions">
+            <button type="button" onclick="cerrarSesion()">Cerrar sesion</button>
+        </div>
+    </div>
+
+    <div class="admin-resumen">
+        <article>
+            <span>Total productos</span>
+            <strong id="adminTotalProductos">0</strong>
+        </article>
+        <article>
+            <span>Ofertas activas</span>
+            <strong id="adminTotalOfertas">0</strong>
+        </article>
+        <article>
+            <span>Agotados</span>
+            <strong id="adminTotalAgotados">0</strong>
+        </article>
+    </div>
+
+    <div class="admin-formulario">
+        <h3>Agregar producto</h3>
+        <div class="admin-grid">
+            <input type="text" id="adminNombre" placeholder="Nombre del producto">
+            <input type="number" id="adminPrecio" placeholder="Precio">
+            <div class="campo-imagen-admin">
+                <label for="adminImagenArchivo" class="label-admin">Imagen del producto</label>
+                <input type="file" id="adminImagenArchivo" accept="image/*" onchange="mostrarVistaPreviaAdmin(event)">
+                <small class="admin-ayuda">Sube una imagen desde tu computadora. No necesitas escribir ninguna ruta.</small>
+            </div>
+            <div id="previewImagenAdmin" class="preview-imagen-admin oculto">
+                <span class="label-admin">Vista previa</span>
+                <img id="previewImagenAdminImg" alt="Vista previa del producto">
+            </div>
+            <input type="text" id="adminDescripcion" placeholder="Descripcion del producto">
+            <input type="number" id="adminPrecioAnterior" placeholder="Precio anterior para oferta">
+            <select id="adminDestacado">
+                <option value="false">Catalogo normal</option>
+                <option value="true">Producto destacado</option>
+            </select>
+        </div>
+        <div class="login-actions">
+            <button type="button" onclick="agregarProductoAdmin()">Guardar producto</button>
+        </div>
+        <p id="mensajeAdmin" class="mensaje-login"></p>
+    </div>
+
+    <div class="admin-tabla-wrap">
+        <table class="admin-tabla">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Oferta</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="adminTablaProductos"></tbody>
+        </table>
+    </div>
+</section>
+
+<section id="soporte" class="soporte-box">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Ayuda al cliente</p>
+            <h2>Centro de soporte</h2>
+        </div>
+        <p>Estamos disponibles para ayudarte con pedidos, dudas de productos y seguimiento de compras.</p>
+    </div>
+
+    <div class="soporte-grid">
+        <article>
+            <h3>Horario</h3>
+            <p>Lunes a Lunes, de 8:00 a.m. a 12:00 p.m.</p>
+        </article>
+        <article>
+            <h3>Correo</h3>
+            <p>israelbritoespinal@gmail.com</p>
+        </article>
+        <article>
+            <h3>Compromiso</h3>
+            <p>Respuesta rapida, trato cercano y apoyo en cada compra.</p>
+        </article>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Mercadito Nena | Proyecto final de pagina web comercial Israel Brito</p>
+</footer>
+
+<div id="registroModal" class="modal oculto">
+    <div class="modal-contenido">
+        <button type="button" class="modal-cerrar" onclick="cerrarModalRegistro()">&times;</button>
+        <div id="registroPaso1">
+            <p class="eyebrow">Crear cuenta</p>
+            <h3>Datos personales</h3>
+            <div class="modal-grid">
+                <input type="text" id="registroNombre" placeholder="Nombre">
+                <input type="text" id="registroApellido" placeholder="Apellidos">
+                <input type="tel" id="registroTelefono" placeholder="Numero de telefono">
+                <input type="email" id="registroCorreo" placeholder="Correo electronico">
+                <input type="password" id="registroClave" placeholder="Contrasena">
+            </div>
+            <div class="login-actions">
+                <button type="button" onclick="continuarRegistro()">Siguiente</button>
+            </div>
+        </div>
+        <div id="registroPaso2" class="oculto">
+            <p class="eyebrow">Crear cuenta</p>
+            <h3>Nombre de usuario</h3>
+            <div class="modal-grid">
+                <input type="text" id="registroUsuario" placeholder="Nombre de usuario">
+            </div>
+            <div class="login-actions">
+                <button type="button" class="boton-ghost auth-secundario" onclick="volverRegistro()">Atras</button>
+                <button type="button" onclick="registrarUsuario()">Crear cuenta</button>
+            </div>
+        </div>
+        <p id="mensajeRegistro" class="mensaje-login"></p>
+    </div>
+</div>
+
+<div id="pagoModal" class="modal oculto">
+    <div class="modal-contenido">
+        <button type="button" class="modal-cerrar" onclick="cerrarModalPago()">&times;</button>
+        <p class="eyebrow">Pago</p>
+        <h3>Finalizar compra</h3>
+        <div class="modal-grid">
+            <input type="text" id="titularTarjeta" placeholder="Nombre del titular">
+            <input type="text" id="numeroTarjeta" placeholder="Numero de tarjeta">
+            <input type="password" id="codigoSeguridad" placeholder="Codigo de seguridad">
+        </div>
+        <p id="mensajePago" class="mensaje-login"></p>
+        <div class="login-actions">
+            <button type="button" onclick="procesarPago()">Pagar ahora</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
